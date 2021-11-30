@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/productsansbold"
+        android:textSize="24sp"
+        android:text="@string/welcome_to_vault_y" />
+    <TextView
+        android:id="@+id/startedText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:text="@string/started"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/productsans"
+        android:layout_marginTop="30dp"
+        android:textSize="18sp"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/mpinHolder"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/startedText"
+        android:layout_marginStart="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="8dp">
+
+        <EditText
+            android:id="@+id/mpin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/productsans"
+            android:hint="@string/mpin_set_field"
+            android:maxLength="4"
+            android:inputType="numberPassword"
+            android:textAlignment="center" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/meanwhileLoaderAnim"
+        android:layout_width="210dp"
+        android:layout_height="210dp"
+        android:layout_below="@+id/mpinHolder"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="vault.json"
+        app:lottie_loop="true" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/pressButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Begin"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/meanwhileLoaderAnim"/>
+</RelativeLayout>
