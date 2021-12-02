@@ -10,13 +10,13 @@ import android.os.Bundle;
 @SuppressLint("CustomSplashScreen")
 public class SplashScreen extends AppCompatActivity {
     public static final String USER_CODE = "userPin";
-    int anshu;
+    String anshu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferences prefs = getSharedPreferences(USER_CODE, MODE_PRIVATE);
-        anshu = prefs.getInt("userPin",0);
-        if (anshu !=0){
+        anshu = prefs.getString("userPin",null);
+        if (anshu != null){
             //user pin set, proceed to main-activity
             Intent toMain = new Intent(this,MainActivity.class);
             startActivity(toMain);

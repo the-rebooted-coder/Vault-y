@@ -18,7 +18,7 @@ import com.airbnb.lottie.LottieAnimationView;
 
 public class SignUp extends AppCompatActivity {
 
-    int mpin;
+    String mpin;
     EditText mpinHolder;
     public static final String USER_CODE = "userPin";
     Button submit;
@@ -35,9 +35,9 @@ public class SignUp extends AppCompatActivity {
     private void actions() {
         submit.setOnClickListener(view -> {
             if (validate()) {
-                mpin = Integer.parseInt(mpinHolder.getText().toString());
+                mpin = mpinHolder.getText().toString();
                 SharedPreferences.Editor editor = getSharedPreferences(USER_CODE, MODE_PRIVATE).edit();
-                editor.putInt("userPin",mpin);
+                editor.putString("userPin",mpin);
                 editor.apply();
                 Toast.makeText(this,"MPIN set to "+mpin,Toast.LENGTH_SHORT).show();
                 vibrateDeviceSuccess();
