@@ -39,7 +39,6 @@ public class SignUp extends AppCompatActivity {
                 SharedPreferences.Editor editor = getSharedPreferences(USER_CODE, MODE_PRIVATE).edit();
                 editor.putString("userPin",mpin);
                 editor.apply();
-                Toast.makeText(this,"MPIN set to "+mpin,Toast.LENGTH_SHORT).show();
                 vibrateDeviceSuccess();
                 Intent toSecuring = new Intent(this,Securing.class);
                 startActivity(toSecuring);

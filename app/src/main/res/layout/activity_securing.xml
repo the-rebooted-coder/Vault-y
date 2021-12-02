@@ -5,6 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Securing">
+    <com.tomer.fadingtextview.FadingTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:texts="@array/encryptionHolders"
+        android:fontFamily="@font/productsansbold"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:timeout="3000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        />
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/meanwhileLoaderAnim"
         android:layout_width="250dp"

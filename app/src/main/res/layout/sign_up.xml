@@ -14,12 +14,12 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:textAlignment="center"
-        app:texts="@array/welcomeTexts"
-        app:timeout="3000"
         android:fontFamily="@font/productsansbold"
+        android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        app:texts="@array/welcomeTexts"
+        app:timeout="3000" />
     <TextView
         android:id="@+id/startedText"
         android:layout_width="wrap_content"
