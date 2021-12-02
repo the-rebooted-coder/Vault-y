@@ -5,16 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignUp">
-    <TextView
+
+    <com.tomer.fadingtextview.FadingTextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
+        android:textAlignment="center"
+        app:texts="@array/welcomeTexts"
+        app:timeout="2600"
         android:fontFamily="@font/productsansbold"
-        android:textSize="24sp"
-        android:text="@string/welcome_to_vault_y" />
+        android:textColor="@color/black"
+        android:textSize="24sp" />
     <TextView
         android:id="@+id/startedText"
         android:layout_width="wrap_content"
