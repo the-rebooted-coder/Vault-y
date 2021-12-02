@@ -4,6 +4,7 @@
     <string name="started">Let\'s Get Started</string>
     <string name="mpin_set_field">Set a 4 digit MPIN</string>
     <string name="begin">Begin</string>
+    <string name="welcome_to_your_vault">Welcome to your Vault!</string>
     <string-array name="welcomeTexts">
         <item>Hello</item>
         <item>Welcome to Vault-y</item>

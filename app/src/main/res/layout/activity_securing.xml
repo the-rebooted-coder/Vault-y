@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/welcome_to_your_vault"
-        android:textAlignment="center"
-        android:fontFamily="@font/productsansbold"
+    tools:context=".Securing">
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/meanwhileLoaderAnim"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_centerInParent="true"
-        android:textSize="34sp"/>
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="securing.json"
+        app:lottie_loop="false" />
 </RelativeLayout>

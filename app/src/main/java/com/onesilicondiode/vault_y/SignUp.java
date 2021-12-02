@@ -41,8 +41,9 @@ public class SignUp extends AppCompatActivity {
                 editor.apply();
                 Toast.makeText(this,"MPIN set to "+mpin,Toast.LENGTH_SHORT).show();
                 vibrateDeviceSuccess();
-                Intent toMain = new Intent(this,MainActivity.class);
-                startActivity(toMain);
+                Intent toSecuring = new Intent(this,Securing.class);
+                startActivity(toSecuring);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 finish();
             }
         });
