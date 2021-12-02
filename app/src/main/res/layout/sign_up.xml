@@ -62,11 +62,12 @@
         app:lottie_autoPlay="true"
         app:lottie_fileName="vault.json"
         app:lottie_loop="false" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/pressButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/begin"
+        android:layout_below="@+id/meanwhileLoaderAnim"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/meanwhileLoaderAnim"/>
+        android:text="@string/begin"/>
 </RelativeLayout>
