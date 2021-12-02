@@ -10,6 +10,7 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class SignUp extends AppCompatActivity {
 
@@ -33,6 +34,7 @@ public class SignUp extends AppCompatActivity {
                 SharedPreferences.Editor editor = getSharedPreferences(USER_CODE, MODE_PRIVATE).edit();
                 editor.putInt("userPin",mpin);
                 editor.apply();
+                Toast.makeText(this,"MPIN set to "+mpin,Toast.LENGTH_SHORT).show();
                 vibrateDeviceSuccess();
             }
         });
