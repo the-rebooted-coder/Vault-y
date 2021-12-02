@@ -2,6 +2,6 @@
     <string name="app_name">Vault-y</string>
     <string name="welcome_to_vault_y">Welcome to Vault-y</string>
     <string name="started">Let\'s Get Started</string>
-    <string name="mpin_set_field">Enter a 4 digit MPIN</string>
+    <string name="mpin_set_field">Set a 4 digit MPIN</string>
     <string name="begin">Begin</string>
 </resources>

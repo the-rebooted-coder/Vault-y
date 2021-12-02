@@ -3,25 +3,25 @@ package com.onesilicondiode.vault_y;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class SignUp extends AppCompatActivity {
 
     int mpin;
     EditText mpinHolder;
+    public static final String USER_CODE = "userPin";
     Button submit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.sign_up);
         init();
         actions();
     }
@@ -29,7 +29,10 @@ public class MainActivity extends AppCompatActivity {
     private void actions() {
         submit.setOnClickListener(view -> {
             if (validate()) {
-                Toast.makeText(MainActivity.this, "To be Implemented", Toast.LENGTH_SHORT).show();
+                mpin = Integer.parseInt(mpinHolder.getText().toString());
+                SharedPreferences.Editor editor = getSharedPreferences(USER_CODE, MODE_PRIVATE).edit();
+                editor.putInt("userPin",mpin);
+                editor.apply();
                 vibrateDeviceSuccess();
             }
         });
