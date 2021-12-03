@@ -28,7 +28,6 @@ public class Securing extends AppCompatActivity {
         setContentView(R.layout.activity_securing);
         getKeyValue();
         startEncryptionProcess();
-/*
         final Handler handler = new Handler(Looper.getMainLooper());
         handler.postDelayed(() -> {
             Intent toMain = new Intent(Securing.this,MainActivity.class);
@@ -36,8 +35,6 @@ public class Securing extends AppCompatActivity {
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             finish();
         }, 15500);
-
- */
     }
 
     private void startEncryptionProcess() {
