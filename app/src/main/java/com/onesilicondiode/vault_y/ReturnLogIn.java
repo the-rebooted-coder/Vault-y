@@ -42,7 +42,7 @@ public class ReturnLogIn extends AppCompatActivity {
             }
             else {
                 WrongHaptics();
-                Toast.makeText(this,"Wrong MPIN Entered",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Wrong MPIN Entered!",Toast.LENGTH_SHORT).show();
             }
         });
     }
