@@ -28,6 +28,7 @@ public class ReturnLogIn extends AppCompatActivity {
             haptics();
             Intent toMain = new Intent(ReturnLogIn.this,MainActivity.class);
             startActivity(toMain);
+            finish();
             overridePendingTransition(R.anim.fadein,R.anim.fadeout);
         });
     }
