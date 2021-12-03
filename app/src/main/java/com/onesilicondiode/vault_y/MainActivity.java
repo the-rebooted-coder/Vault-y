@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         haptics();
         isSessionActive = false;
         Toast.makeText(this,"Securely closing Vault-y",Toast.LENGTH_SHORT).show();
+        finish();
     }
 
     @Override
