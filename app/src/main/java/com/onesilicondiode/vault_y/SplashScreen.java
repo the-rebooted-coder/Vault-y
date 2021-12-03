@@ -1,7 +1,6 @@
 package com.onesilicondiode.vault_y;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -14,7 +13,6 @@ public class SplashScreen extends AppCompatActivity {
     String anshu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         super.onCreate(savedInstanceState);
         SharedPreferences prefs = getSharedPreferences(USER_CODE, MODE_PRIVATE);
         anshu = prefs.getString("userPin",null);
