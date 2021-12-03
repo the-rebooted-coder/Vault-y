@@ -28,7 +28,6 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
-        init();
         actions();
     }
 
@@ -51,6 +50,12 @@ public class SignUp extends AppCompatActivity {
             vaultAnim.playAnimation();
             vaultAnim.setRepeatCount(0);
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        init();
     }
 
     private void init(){
