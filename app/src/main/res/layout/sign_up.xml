@@ -65,9 +65,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/pressButton"
-        android:layout_width="wrap_content"
+        android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/meanwhileLoaderAnim"
         android:layout_centerHorizontal="true"
-        android:text="@string/begin"/>
+        android:text="@string/begin" />
 </RelativeLayout>
