@@ -46,13 +46,10 @@ public class SignUp extends AppCompatActivity {
                 finish();
             }
         });
-        vaultAnim.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                vibrateOnVault();
-                vaultAnim.playAnimation();
-                vaultAnim.setRepeatCount(0);
-            }
+        vaultAnim.setOnClickListener(view -> {
+            vibrateOnVault();
+            vaultAnim.playAnimation();
+            vaultAnim.setRepeatCount(0);
         });
     }
 

@@ -24,14 +24,11 @@ public class ReturnLogIn extends AppCompatActivity {
     }
 
     private void actions() {
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                haptics();
-                Intent toMain = new Intent(ReturnLogIn.this,MainActivity.class);
-                startActivity(toMain);
-                overridePendingTransition(R.anim.fadein,R.anim.fadeout);
-            }
+        login.setOnClickListener(view -> {
+            haptics();
+            Intent toMain = new Intent(ReturnLogIn.this,MainActivity.class);
+            startActivity(toMain);
+            overridePendingTransition(R.anim.fadein,R.anim.fadeout);
         });
     }
 
