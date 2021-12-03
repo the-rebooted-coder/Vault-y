@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vaulty">
         <activity
+            android:name=".ReturnLogIn"
+            android:exported="false" />
+        <activity
             android:name=".Securing"
             android:exported="false" />
         <activity
