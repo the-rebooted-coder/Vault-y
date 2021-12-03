@@ -10,7 +10,7 @@ android {
         minSdk 24
         targetSdk 31
         versionCode 1
-        versionName "Backyard-Testing"
+        versionName "Area 51 Testing"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
