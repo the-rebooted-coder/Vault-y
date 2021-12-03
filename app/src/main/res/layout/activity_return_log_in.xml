@@ -32,7 +32,7 @@
         android:layout_marginBottom="8dp">
 
         <EditText
-            android:id="@+id/mpin"
+            android:id="@+id/userEnteredmpin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/productsans"
