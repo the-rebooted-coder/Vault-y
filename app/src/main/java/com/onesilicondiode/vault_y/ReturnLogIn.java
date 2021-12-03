@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.button.MaterialButton;
 
 public class ReturnLogIn extends AppCompatActivity {
@@ -20,6 +21,7 @@ public class ReturnLogIn extends AppCompatActivity {
     public static final String USER_CODE = "userPin";
     EditText userEnteredPin;
     String securedKey;
+    LottieAnimationView vaultAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +47,15 @@ public class ReturnLogIn extends AppCompatActivity {
                 Toast.makeText(this,"Wrong MPIN Entered!",Toast.LENGTH_SHORT).show();
             }
         });
+        vaultAnim.setOnClickListener(view -> {
+            CorrectHaptics();
+            vaultAnim.playAnimation();
+            vaultAnim.setRepeatCount(0);
+        });
     }
 
     private void init(){
+        vaultAnim = findViewById(R.id.uselessVault);
         login = findViewById(R.id.enterVaultAgain);
         userEnteredPin = findViewById(R.id.userEnteredmpin);
     }

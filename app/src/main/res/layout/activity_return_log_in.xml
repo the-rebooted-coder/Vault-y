@@ -51,6 +51,15 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/productsans"
         android:text="@string/enter_vault" />
-
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/uselessVault"
+        android:layout_width="210dp"
+        android:layout_height="210dp"
+        android:layout_below="@+id/enterVaultAgain"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="vault.json"
+        app:lottie_loop="false" />
 
 </RelativeLayout>
