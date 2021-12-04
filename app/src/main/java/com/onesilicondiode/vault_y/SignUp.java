@@ -86,16 +86,17 @@ public class SignUp extends AppCompatActivity {
         }
     }
     boolean validate() {
-        if (mpinHolder.getText().toString().isEmpty()) {
+        if (name.getText().toString().isEmpty()) {
+            name.setError("Name required to continue");
+            vibrateDeviceError();
+            return false;
+        }
+        else if (mpinHolder.getText().toString().isEmpty()) {
             mpinHolder.setError("4 Digit MPIN is required");
             vibrateDeviceError();
             return false;
         }
-        else if (name.getText().toString().isEmpty()){
-            name.setError("Name required to continue");
-            vibrateDeviceError();
-            return false;
-        }else {
+        else {
             return true;
         }
     }
