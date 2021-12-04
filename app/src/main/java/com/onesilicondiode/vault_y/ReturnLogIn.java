@@ -118,7 +118,6 @@ public class ReturnLogIn extends AppCompatActivity {
         } catch (KeyStoreException | IOException | CertificateException
                 | NoSuchAlgorithmException | InvalidAlgorithmParameterException
                 | NoSuchProviderException e) {
-
             e.printStackTrace();
         }
     }

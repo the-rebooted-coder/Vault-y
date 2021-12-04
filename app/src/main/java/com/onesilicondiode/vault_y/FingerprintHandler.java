@@ -2,6 +2,7 @@ package com.onesilicondiode.vault_y;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.fingerprint.FingerprintManager;
 
 import android.os.CancellationSignal;
@@ -46,6 +47,12 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
             }, 4000);
         }
         else {
+             final Handler handler = new Handler(Looper.getMainLooper());
+            handler.postDelayed(() -> {
+                Intent toMain = new Intent(context,MainActivity.class);
+                context.startActivity(toMain);
+                ((Activity) context).finish();
+            }, 4000);
             fingerprintText.setTextColor(ContextCompat.getColor(context,R.color.blue));
             finger.setAnimation("finger_pass.json");
             finger.playAnimation();
