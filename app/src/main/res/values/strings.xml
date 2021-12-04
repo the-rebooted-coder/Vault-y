@@ -11,7 +11,7 @@
     <string name="enter_vault">Enter Vault</string>
     <string name="storing_notice">MPIN is stored in your device itself,\nusing <u>DES encryption</u></string>
     <string name="enter_your_name">Enter your Name</string>
-    <string name="clear_mpin">Clear MPIN</string>
+    <string name="clear_mpin">Reset MPIN</string>
     <string name="more_security_options">More Security Options</string>
     <string name="about_app">About Vault-y</string>
     <string name="logout">Logout</string>

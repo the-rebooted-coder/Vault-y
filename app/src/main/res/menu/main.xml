@@ -10,7 +10,7 @@
         android:id="@+id/logout"
         android:icon="@drawable/ic_baseline_close"
         android:title="@string/logout"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/clearPin"
         android:icon="@drawable/ic_baseline_delete"
