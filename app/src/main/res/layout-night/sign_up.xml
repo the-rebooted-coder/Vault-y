@@ -47,8 +47,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/productsans"
             android:hint="@string/enter_your_name"
-            android:maxLength="4"
-            android:inputType="numberPassword"
+            android:inputType="textPersonName"
             android:textAlignment="center" />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
