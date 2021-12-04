@@ -7,8 +7,6 @@
     android:focusableInTouchMode="true"
     android:layout_height="match_parent"
     tools:context=".ReturnLogIn">
-
-
     <TextView
         android:id="@+id/appNameHolder"
         android:layout_width="wrap_content"
@@ -21,37 +19,59 @@
         android:textColor="@color/black"
         android:textSize="24sp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/mpinHolder"
-        android:layout_below="@+id/appNameHolder"
-        android:layout_centerHorizontal="true"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardCover"
         android:layout_width="match_parent"
-        android:layout_marginStart="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="8dp">
-
-        <EditText
-            android:id="@+id/userEnteredmpin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/productsans"
-            android:hint="@string/enter_your_4_digit_mpin"
-            android:maxLength="4"
-            android:inputType="numberPassword"
-            android:textAlignment="center" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/enterVaultAgain"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/mpinHolder"
-        android:layout_centerHorizontal="true"
+        android:layout_height="match_parent"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/productsansbold"
-        android:text="@string/enter_vault"
-        android:textColor="@color/white" />
+        android:backgroundTint="#ECECEC"
+        android:layout_below="@+id/appNameHolder"
+        app:cardCornerRadius="40dp"
+        android:layout_centerHorizontal="true"
+        android:innerRadius="0dp"
+        android:shape="rectangle"
+        android:thicknessRatio="1.9">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mpinHolder"
+                android:layout_centerHorizontal="true"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_marginStart="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/userEnteredmpin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/productsans"
+                    android:hint="@string/enter_your_4_digit_mpin"
+                    android:maxLength="4"
+                    android:inputType="numberPassword"
+                    android:textAlignment="center" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/enterVaultAgain"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mpinHolder"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/productsansbold"
+                android:text="@string/enter_vault"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <View
+        android:layout_below="@+id/cardCover"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="-40dp"
+        android:background="#ECECEC"/>
 
 </RelativeLayout>
