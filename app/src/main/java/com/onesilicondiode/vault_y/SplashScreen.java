@@ -11,10 +11,14 @@ import android.os.Bundle;
 @SuppressLint("CustomSplashScreen")
 public class SplashScreen extends AppCompatActivity {
     public static final String USER_CODE = "userPin";
+    public static final String UI_MODE = "uiMode";
     String anshu;
+    String theme;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        SharedPreferences setTheme = getSharedPreferences(UI_MODE, MODE_PRIVATE);
+        theme= setTheme.getString("uiMode", "System");
+        applyUI();
         super.onCreate(savedInstanceState);
         SharedPreferences prefs = getSharedPreferences(USER_CODE, MODE_PRIVATE);
         anshu = prefs.getString("userPin",null);
@@ -29,6 +33,18 @@ public class SplashScreen extends AppCompatActivity {
             Intent toSignUp = new Intent(this,SignUp.class);
             startActivity(toSignUp);
             finish();
+        }
+    }
+
+    private void applyUI() {
+        if (theme.equals("Dark")){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+        else if (theme.equals("Light")){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+        else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         }
     }
 }

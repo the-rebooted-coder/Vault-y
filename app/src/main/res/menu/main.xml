@@ -21,4 +21,9 @@
         android:icon="@drawable/ic_baseline_about"
         android:title="@string/about_app"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/theme"
+        android:icon="@drawable/ic_baseline_color"
+        android:title="@string/theme"
+        app:showAsAction="always" />
 </menu>

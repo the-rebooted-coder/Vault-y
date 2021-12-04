@@ -40,7 +40,7 @@ public class ReturnLogIn extends AppCompatActivity {
             if (userEnteredPin.getText().toString().equals(securedKey)){
                 //User Entered Correct PIN proceed to Vault
                 CorrectHaptics();
-                Intent toMain = new Intent(ReturnLogIn.this,MainActivity.class);
+                Intent toMain = new Intent(this,MainActivity.class);
                 startActivity(toMain);
                 finish();
                 overridePendingTransition(R.anim.fadein,R.anim.fadeout);

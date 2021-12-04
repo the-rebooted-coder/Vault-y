@@ -1,11 +1,13 @@
 package com.onesilicondiode.vault_y;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,9 +19,13 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
+
 public class MainActivity extends AppCompatActivity {
     boolean isSessionActive = true;
     public static final String USER_CODE = "userPin";
+    public static final String UI_MODE = "uiMode";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,6 +113,57 @@ public class MainActivity extends AppCompatActivity {
                 haptics();
                 Toast.makeText(this,"About to be written",Toast.LENGTH_SHORT).show();
                 return true;
+            case R.id.theme:
+                int nightModeFlags =
+                        this.getResources().getConfiguration().uiMode &
+                                Configuration.UI_MODE_NIGHT_MASK;
+                new MaterialDialog.Builder(this)
+                        .title("Choose how you want Vault-y")
+                        .positiveText("Dark")
+                        .negativeText("Light")
+                        .autoDismiss(true)
+                        .neutralText("System Default")
+                        .onPositive((dialog, which) -> {
+                            haptics();
+                            switch (nightModeFlags) {
+                                case Configuration.UI_MODE_NIGHT_YES:
+                                    Toast.makeText(getApplicationContext(),"Already in Dark Mode \uD83C\uDF19",Toast.LENGTH_SHORT).show();
+
+                                    break;
+                                case Configuration.UI_MODE_NIGHT_NO:
+                                    haptics();
+                                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                                    Toast.makeText(getApplicationContext(),"Switched to Dark Mode \uD83C\uDF19️",Toast.LENGTH_SHORT).show();
+                                    SharedPreferences.Editor editor1 = getSharedPreferences(UI_MODE, MODE_PRIVATE).edit();
+                                    editor1.putString("uiMode","Dark");
+                                    editor1.apply();
+                                    break;
+                            }
+                        })
+                        .onNeutral((dialog, which) -> {
+                            haptics();
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                            Toast.makeText(getApplicationContext(),"Switched to System Default️ \uD83C\uDF17",Toast.LENGTH_SHORT).show();
+                            SharedPreferences.Editor editor12 = getSharedPreferences(UI_MODE, MODE_PRIVATE).edit();
+                            editor12.putString("uiMode","System");
+                            editor12.apply();
+                        })
+                        .onNegative((dialog, which) -> {
+                            switch (nightModeFlags) {
+                                case Configuration.UI_MODE_NIGHT_YES:
+                                    haptics();
+                                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                                    Toast.makeText(getApplicationContext(), "Switched to Light Mode️ ☀", Toast.LENGTH_SHORT).show();
+                                    SharedPreferences.Editor editor13 = getSharedPreferences(UI_MODE, MODE_PRIVATE).edit();
+                                    editor13.putString("uiMode", "Light");
+                                    editor13.apply();
+                                    break;
+                                case Configuration.UI_MODE_NIGHT_NO:
+                                    Toast.makeText(getApplicationContext(), "Already in Light Mode ☀️", Toast.LENGTH_SHORT).show();
+                                    break;
+                            }
+                        })
+                        .show();
             default:
                 return super.onOptionsItemSelected(item);
         }

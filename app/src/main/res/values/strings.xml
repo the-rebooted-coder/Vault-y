@@ -15,6 +15,7 @@
     <string name="more_security_options">More Security Options</string>
     <string name="about_app">About Vault-y</string>
     <string name="logout">Logout</string>
+    <string name="theme">Theme</string>
     <string-array name="welcomeTexts">
         <item>Hello.</item>
         <item>Welcome to Vault-y</item>

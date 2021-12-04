@@ -41,4 +41,6 @@ dependencies {
 
     //Lottie Anims
     implementation "com.airbnb.android:lottie:3.7.0"
-}
+
+    //Material Dialog
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'}
