@@ -14,7 +14,7 @@ public class SplashScreen extends AppCompatActivity {
     String anshu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-      //  AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         super.onCreate(savedInstanceState);
         SharedPreferences prefs = getSharedPreferences(USER_CODE, MODE_PRIVATE);
         anshu = prefs.getString("userPin",null);
