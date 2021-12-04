@@ -57,7 +57,7 @@ public class ReturnLogIn extends AppCompatActivity {
     private void init(){
         login = findViewById(R.id.enterVaultAgain);
         greeting = findViewById(R.id.appNameHolder);
-        greeting.setText(userName+", Welcome Back to Vault-y!");
+        greeting.setText(userName+", welcome back to Vault-y!");
         userEnteredPin = findViewById(R.id.userEnteredmpin);
     }
     private void CorrectHaptics() {
