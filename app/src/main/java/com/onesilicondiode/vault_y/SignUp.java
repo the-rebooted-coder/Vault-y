@@ -22,7 +22,6 @@ public class SignUp extends AppCompatActivity {
     EditText mpinHolder;
     public static final String USER_CODE = "userPin";
     Button submit;
-    LottieAnimationView vaultAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,18 +45,11 @@ public class SignUp extends AppCompatActivity {
                 finish();
             }
         });
-        vaultAnim.setOnClickListener(view -> {
-            vibrateOnVault();
-            vaultAnim.playAnimation();
-            vaultAnim.setRepeatCount(0);
-        });
     }
 
     private void init(){
         mpinHolder = findViewById(R.id.mpin);
-        submit = findViewById(R.id.pressButton);
-        vaultAnim = findViewById(R.id.meanwhileLoaderAnim);
-    }
+        submit = findViewById(R.id.pressButton); }
     private void vibrateDeviceSuccess() {
         Vibrator v3 = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
         long[] pattern = {0,25,70,38};

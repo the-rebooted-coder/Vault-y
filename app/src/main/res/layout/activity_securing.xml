@@ -21,11 +21,11 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/uselessVault"
-        android:layout_width="260dp"
-        android:layout_height="260dp"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
         android:layout_centerInParent="true"
         android:layout_marginTop="30dp"
         app:lottie_autoPlay="true"
         app:lottie_fileName="vault.json"
-        app:lottie_loop="false" />
+        app:lottie_loop="true" />
 </RelativeLayout>

@@ -16,8 +16,8 @@
         android:layout_marginTop="40dp"
         android:fontFamily="@font/productsansbold"
         android:textAlignment="center"
-        android:textColor="#AEAEAE"
-        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
         app:texts="@array/welcomeTexts"
         app:timeout="3000" />
 
@@ -53,22 +53,12 @@
             android:textAlignment="center" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/meanwhileLoaderAnim"
-        android:layout_width="210dp"
-        android:layout_height="210dp"
-        android:layout_below="@+id/mpinHolder"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        app:lottie_autoPlay="true"
-        app:lottie_fileName="vault.json"
-        app:lottie_loop="false" />
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/pressButton"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/meanwhileLoaderAnim"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/mpinHolder"
         android:layout_centerHorizontal="true"
         android:text="@string/begin" />
 </RelativeLayout>
