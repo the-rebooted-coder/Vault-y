@@ -2,16 +2,20 @@ package com.onesilicondiode.vault_y;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -22,6 +26,7 @@ public class SignUp extends AppCompatActivity {
     EditText mpinHolder;
     public static final String USER_CODE = "userPin";
     Button submit;
+    TextView aboutDES;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +36,7 @@ public class SignUp extends AppCompatActivity {
         actions();
     }
 
+    @SuppressLint("SetTextI18n")
     private void actions() {
         submit.setOnClickListener(view -> {
             if (validate()) {
@@ -45,11 +51,19 @@ public class SignUp extends AppCompatActivity {
                 finish();
             }
         });
+        aboutDES.setOnClickListener(view -> {
+            vibrateOnVault();
+            Uri uri = Uri.parse("https://en.wikipedia.org/wiki/Data_Encryption_Standard");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+        });
     }
 
     private void init(){
         mpinHolder = findViewById(R.id.mpin);
-        submit = findViewById(R.id.pressButton); }
+        submit = findViewById(R.id.pressButton);
+        aboutDES = findViewById(R.id.aboutDES);
+    }
     private void vibrateDeviceSuccess() {
         Vibrator v3 = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
         long[] pattern = {0,25,70,38};

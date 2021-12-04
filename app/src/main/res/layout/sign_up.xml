@@ -56,8 +56,19 @@
         android:id="@+id/pressButton"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:layout_below="@id/mpinHolder"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
         android:text="@string/begin" />
+    <TextView
+        android:id="@+id/aboutDES"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/storing_notice"
+        android:fontFamily="@font/productsans"
+        android:textAlignment="center"
+        android:layout_below="@+id/pressButton"
+        android:layout_centerHorizontal="true"
+        android:textSize="14sp"
+        android:layout_marginTop="20dp"/>
 </RelativeLayout>

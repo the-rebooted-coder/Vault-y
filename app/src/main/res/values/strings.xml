@@ -9,6 +9,7 @@
     <string name="enter_your_4_digit_mpin">Enter your 4 digit MPIN</string>
     <string name="welcome_back">Welcome Back to Vault-y!</string>
     <string name="enter_vault">Enter Vault</string>
+    <string name="storing_notice">MPIN is stored in your device itself,\nusing <u>DES encryption</u></string>
     <string-array name="welcomeTexts">
         <item>Hello</item>
         <item>Welcome to Vault-y</item>
