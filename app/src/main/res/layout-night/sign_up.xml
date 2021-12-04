@@ -16,23 +16,22 @@
         android:layout_marginTop="40dp"
         android:fontFamily="@font/productsansbold"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="26sp"
         app:texts="@array/welcomeTexts"
         app:timeout="3000" />
-
     <TextView
         android:id="@+id/startedText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/productsans"
         android:text="@string/started"
-        android:textSize="18sp" />
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/productsans"
+        android:layout_marginTop="30dp"
+        android:textSize="18sp"/>
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/mpinHolder"
+        android:id="@+id/nameHolder"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_centerHorizontal="true"
@@ -40,6 +39,27 @@
         android:layout_marginStart="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:layout_marginBottom="8dp">
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/productsans"
+            android:hint="@string/enter_your_name"
+            android:maxLength="4"
+            android:inputType="numberPassword"
+            android:textAlignment="center" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/mpinHolder"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/nameHolder"
+        android:layout_marginStart="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="8dp">
 
         <EditText
@@ -57,9 +77,10 @@
         android:id="@+id/pressButton"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/mpinHolder"
+        android:layout_below="@id/mpinHolder"
         android:layout_centerHorizontal="true"
+        android:elevation="40dp"
+        android:layout_marginTop="50dp"
         android:text="@string/begin" />
     <TextView
         android:id="@+id/aboutDES"

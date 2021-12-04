@@ -31,7 +31,7 @@
         android:layout_marginTop="30dp"
         android:textSize="18sp"/>
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/mpinHolder"
+        android:id="@+id/nameHolder"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_centerHorizontal="true"
@@ -39,6 +39,27 @@
         android:layout_marginStart="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:layout_marginBottom="8dp">
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/productsans"
+            android:hint="@string/enter_your_name"
+            android:maxLength="4"
+            android:inputType="numberPassword"
+            android:textAlignment="center" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/mpinHolder"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/nameHolder"
+        android:layout_marginStart="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="8dp">
 
         <EditText
@@ -57,6 +78,7 @@
         android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/mpinHolder"
+        android:elevation="40dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:text="@string/begin" />
