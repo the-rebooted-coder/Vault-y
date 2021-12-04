@@ -25,8 +25,10 @@ public class SignUp extends AppCompatActivity {
     String mpin;
     EditText mpinHolder;
     public static final String USER_CODE = "userPin";
+    public static final String USER_NAME = "userName";
     Button submit;
     TextView aboutDES;
+    EditText name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +42,7 @@ public class SignUp extends AppCompatActivity {
     private void actions() {
         submit.setOnClickListener(view -> {
             if (validate()) {
-                mpin = mpinHolder.getText().toString();
-                SharedPreferences.Editor editor = getSharedPreferences(USER_CODE, MODE_PRIVATE).edit();
-                editor.putString("userPin",mpin);
-                editor.apply();
+                storeKeyAndName();
                 vibrateDeviceSuccess();
                 Intent toSecuring = new Intent(this,Securing.class);
                 startActivity(toSecuring);
@@ -61,8 +60,19 @@ public class SignUp extends AppCompatActivity {
         });
     }
 
+    private void storeKeyAndName() {
+        mpin = mpinHolder.getText().toString();
+        SharedPreferences.Editor editor = getSharedPreferences(USER_CODE, MODE_PRIVATE).edit();
+        editor.putString("userPin",mpin);
+        editor.apply();
+        SharedPreferences.Editor nameEditor = getSharedPreferences(USER_NAME, MODE_PRIVATE).edit();
+        nameEditor.putString("userName",name.toString());
+        nameEditor.apply();
+    }
+
     private void init(){
         mpinHolder = findViewById(R.id.mpin);
+        name = findViewById(R.id.name);
         submit = findViewById(R.id.pressButton);
         aboutDES = findViewById(R.id.aboutDES);
     }
@@ -80,7 +90,12 @@ public class SignUp extends AppCompatActivity {
             mpinHolder.setError("4 Digit MPIN is required");
             vibrateDeviceError();
             return false;
-        } else {
+        }
+        else if (name.getText().toString().isEmpty()){
+            name.setError("Name required to continue");
+            vibrateDeviceError();
+            return false;
+        }else {
             return true;
         }
     }
