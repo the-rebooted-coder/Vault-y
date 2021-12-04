@@ -45,9 +45,10 @@ public class ReturnLogIn extends AppCompatActivity {
                 finish();
                 overridePendingTransition(R.anim.fadein,R.anim.fadeout);
             }
+            else if(userEnteredPin.getText().toString().isEmpty()){
+                userEnteredPin.setError("Enter MPIN"); }
             else {
-                WrongHaptics();
-                Toast.makeText(this,"Wrong MPIN Entered!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Wrong MPIN Entered",Toast.LENGTH_SHORT).show();
             }
         });
     }
