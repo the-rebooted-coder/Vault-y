@@ -39,11 +39,10 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
             finger.playAnimation();
             finger.setRepeatCount(0);
             final Handler handler = new Handler(Looper.getMainLooper());
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                   fingerprintText.setText(R.string.use_finger);
-                }
+            handler.postDelayed(() -> {
+               fingerprintText.setText(R.string.use_finger);
+               finger.setAnimation("finger_starter.json");
+               finger.playAnimation();
             }, 4000);
         }
         else {
