@@ -118,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
                         this.getResources().getConfiguration().uiMode &
                                 Configuration.UI_MODE_NIGHT_MASK;
                 new MaterialDialog.Builder(this)
+                        .cancelable(false)
                         .title("Choose how you want Vault-y")
                         .positiveText("Dark")
                         .negativeText("Light")
@@ -128,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
                             switch (nightModeFlags) {
                                 case Configuration.UI_MODE_NIGHT_YES:
                                     Toast.makeText(getApplicationContext(),"Already in Dark Mode \uD83C\uDF19",Toast.LENGTH_SHORT).show();
-
                                     break;
                                 case Configuration.UI_MODE_NIGHT_NO:
                                     haptics();
@@ -137,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
                                     SharedPreferences.Editor editor1 = getSharedPreferences(UI_MODE, MODE_PRIVATE).edit();
                                     editor1.putString("uiMode","Dark");
                                     editor1.apply();
+                                    reStart();
                                     break;
                             }
                         })
@@ -147,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
                             SharedPreferences.Editor editor12 = getSharedPreferences(UI_MODE, MODE_PRIVATE).edit();
                             editor12.putString("uiMode","System");
                             editor12.apply();
+                            reStart();
                         })
                         .onNegative((dialog, which) -> {
                             switch (nightModeFlags) {
@@ -157,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
                                     SharedPreferences.Editor editor13 = getSharedPreferences(UI_MODE, MODE_PRIVATE).edit();
                                     editor13.putString("uiMode", "Light");
                                     editor13.apply();
+                                    reStart();
                                     break;
                                 case Configuration.UI_MODE_NIGHT_NO:
                                     Toast.makeText(getApplicationContext(), "Already in Light Mode ☀️", Toast.LENGTH_SHORT).show();
@@ -167,5 +170,11 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void reStart() {
+        Intent toReturn = new Intent(this,ReturnLogIn.class);
+        startActivity(toReturn);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }
