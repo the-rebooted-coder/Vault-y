@@ -56,6 +56,7 @@ public class SignUp extends AppCompatActivity {
             Uri uri = Uri.parse("https://en.wikipedia.org/wiki/Data_Encryption_Standard");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         });
     }
 
