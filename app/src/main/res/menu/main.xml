@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/moreEncryptions"
+        android:icon="@drawable/ic_baseline_security"
+        android:title="@string/more_security_options"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/ic_baseline_close"
+        android:title="@string/logout"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/clearPin"
+        android:icon="@drawable/ic_baseline_delete"
+        android:title="@string/clear_mpin"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/aboutApp"
+        android:icon="@drawable/ic_baseline_about"
+        android:title="@string/about_app"
+        app:showAsAction="ifRoom" />
+</menu>
