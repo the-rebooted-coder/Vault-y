@@ -46,7 +46,7 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
             }, 4000);
         }
         else {
-            fingerprintText.setTextColor(ContextCompat.getColor(context,R.color.green));
+            fingerprintText.setTextColor(ContextCompat.getColor(context,R.color.blue));
             finger.setAnimation("finger_pass.json");
             finger.playAnimation();
             finger.setRepeatCount(0);
