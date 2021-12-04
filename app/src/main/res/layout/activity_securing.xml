@@ -5,24 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Securing">
+
     <com.tomer.fadingtextview.FadingTextView
+        android:id="@+id/securing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:texts="@array/encryptionHolders"
-        android:fontFamily="@font/productsansbold"
-        android:textSize="20sp"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        app:timeout="3000"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        />
+        android:fontFamily="@font/productsansbold"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:texts="@array/encryptionHolders"
+        app:timeout="3000" />
+
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/meanwhileLoaderAnim"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:id="@+id/uselessVault"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
         android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
         app:lottie_autoPlay="true"
-        app:lottie_fileName="securing.json"
+        app:lottie_fileName="vault.json"
         app:lottie_loop="false" />
 </RelativeLayout>

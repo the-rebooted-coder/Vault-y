@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="Theme.Vaulty" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#353535</item>
+        <item name="colorPrimary">#090909</item>
         <item name="colorPrimaryVariant">#494949</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">#252525</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>

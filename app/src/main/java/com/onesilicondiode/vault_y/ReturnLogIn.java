@@ -21,7 +21,6 @@ public class ReturnLogIn extends AppCompatActivity {
     public static final String USER_CODE = "userPin";
     EditText userEnteredPin;
     String securedKey;
-    LottieAnimationView vaultAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +36,6 @@ public class ReturnLogIn extends AppCompatActivity {
             if (userEnteredPin.getText().toString().equals(securedKey)){
                 //User Entered Correct PIN proceed to Vault
                 CorrectHaptics();
-                vaultAnim.playAnimation();
                 Intent toMain = new Intent(ReturnLogIn.this,MainActivity.class);
                 startActivity(toMain);
                 finish();
@@ -48,15 +46,9 @@ public class ReturnLogIn extends AppCompatActivity {
                 Toast.makeText(this,"Wrong MPIN Entered!",Toast.LENGTH_SHORT).show();
             }
         });
-        vaultAnim.setOnClickListener(view -> {
-            CorrectHaptics();
-            vaultAnim.playAnimation();
-            vaultAnim.setRepeatCount(0);
-        });
     }
 
     private void init(){
-        vaultAnim = findViewById(R.id.uselessVault);
         login = findViewById(R.id.enterVaultAgain);
         userEnteredPin = findViewById(R.id.userEnteredmpin);
     }

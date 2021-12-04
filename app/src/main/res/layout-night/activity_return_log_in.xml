@@ -17,7 +17,7 @@
         android:fontFamily="@font/productsansbold"
         android:text="@string/welcome_back"
         android:textAlignment="center"
-        android:textColor="#C8C8C8"
+        android:textColor="@color/white"
         android:textSize="24sp" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -44,22 +44,13 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/enterVaultAgain"
-        android:layout_width="210dp"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/mpinHolder"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/productsans"
-        android:text="@string/enter_vault" />
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/uselessVault"
-        android:layout_width="210dp"
-        android:layout_height="210dp"
-        android:layout_below="@+id/enterVaultAgain"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        app:lottie_autoPlay="true"
-        app:lottie_fileName="vault.json"
-        app:lottie_loop="false" />
+        android:fontFamily="@font/productsansbold"
+        android:text="@string/enter_vault"
+        android:textColor="@color/white" />
 
 </RelativeLayout>
