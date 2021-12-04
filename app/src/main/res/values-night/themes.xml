@@ -16,4 +16,5 @@
     <style name="LaunchTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/splash</item>
     </style>
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar"/>
 </resources>

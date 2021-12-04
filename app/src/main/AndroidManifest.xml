@@ -20,7 +20,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/ActionBar"
+            android:theme="@style/AppTheme"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"

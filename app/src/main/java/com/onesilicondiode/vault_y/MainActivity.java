@@ -2,8 +2,10 @@ package com.onesilicondiode.vault_y;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,6 +19,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     boolean isSessionActive = true;
+    public static final String USER_CODE = "userPin";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         haptics();
         isSessionActive = false;
-        Toast.makeText(this,"Securely closing Vault-y",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Vault Locked",Toast.LENGTH_SHORT).show();
         finish();
     }
 
@@ -66,19 +69,44 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
         switch (item.getItemId())
         {
-           // case R.id.search:
-                //your code here
-              //  return true;
+            case R.id.moreEncryptions:
+                haptics();
+                Toast.makeText(this,"More to be implemented (:",Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.logout:
+                haptics();
+                isSessionActive = false;
+                Toast.makeText(this,"Securely closing Vault-y",Toast.LENGTH_SHORT).show();
+                Intent toReturn = new Intent(this,ReturnLogIn.class);
+                startActivity(toReturn);
+                overridePendingTransition(R.anim.fadein,R.anim.fadeout);
+                finish();
+                return true;
+            case R.id.clearPin:
+                haptics();
+                SharedPreferences.Editor editor = getSharedPreferences(USER_CODE, MODE_PRIVATE).edit();
+                editor.putString("userPin",null);
+                editor.apply();
+                Toast.makeText(this,"MPIN cleared successfully!",Toast.LENGTH_SHORT).show();
+                Intent toSignUp = new Intent(this,SignUp.class);
+                startActivity(toSignUp);
+                overridePendingTransition(R.anim.fadein,R.anim.fadeout);
+                finish();
+                return true;
+            case R.id.aboutApp:
+                haptics();
+                Toast.makeText(this,"About to be written",Toast.LENGTH_SHORT).show();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
