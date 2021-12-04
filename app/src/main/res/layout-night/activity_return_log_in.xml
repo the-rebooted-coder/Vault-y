@@ -78,15 +78,16 @@
                 android:text="@string/use_finger"
                 android:textAlignment="center"
                 android:textSize="16sp" />
-
-            <ImageView
-                android:id="@+id/fingerprintView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/fingerPrintAnim"
+                android:layout_width="60dp"
                 android:layout_below="@+id/aboutFingerprint"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                app:srcCompat="@drawable/ic_baseline_fingerprint_dark"/>
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="finger_starter.json"
+                app:lottie_loop="true"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
     <View
