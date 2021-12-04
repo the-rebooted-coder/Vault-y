@@ -3,9 +3,11 @@ package com.onesilicondiode.vault_y;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.KeyguardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
@@ -18,6 +20,8 @@ import android.widget.Toast;
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.button.MaterialButton;
 
+import java.security.KeyStore;
+
 public class ReturnLogIn extends AppCompatActivity {
     MaterialButton login;
     public static final String USER_CODE = "userPin";
@@ -26,6 +30,9 @@ public class ReturnLogIn extends AppCompatActivity {
     EditText userEnteredPin;
     String securedKey;
     TextView greeting;
+    private KeyStore keyStore;
+    // Variable used for storing the key in the Android Keystore container
+    private static final String KEY_NAME = "spandan";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +40,8 @@ public class ReturnLogIn extends AppCompatActivity {
         setContentView(R.layout.activity_return_log_in);
         getKeyValue();
         init();
-        actions();}
+        actions()
+        ;}
 
     private void actions() {
         login.setOnClickListener(view -> {
@@ -63,6 +71,9 @@ public class ReturnLogIn extends AppCompatActivity {
         userName = nameGet.getString("userName","Vault-y User");
         greeting.setText(userName+", welcome back to Vault-y!");
         userEnteredPin = findViewById(R.id.userEnteredmpin);
+        KeyguardManager keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
+        FingerprintManager fingerprintManager = (FingerprintManager) getSystemService(FINGERPRINT_SERVICE);
+
     }
     private void CorrectHaptics() {
         Vibrator v3 = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
