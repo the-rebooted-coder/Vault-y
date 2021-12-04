@@ -2,6 +2,7 @@ package com.onesilicondiode.vault_y;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +12,7 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -19,8 +21,11 @@ import com.google.android.material.button.MaterialButton;
 public class ReturnLogIn extends AppCompatActivity {
     MaterialButton login;
     public static final String USER_CODE = "userPin";
+    public static final String USER_NAME = "userName";
+    String userName;
     EditText userEnteredPin;
     String securedKey;
+    TextView greeting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +53,11 @@ public class ReturnLogIn extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("SetTextI18n")
     private void init(){
         login = findViewById(R.id.enterVaultAgain);
+        greeting = findViewById(R.id.appNameHolder);
+        greeting.setText(userName+", Welcome Back to Vault-y!");
         userEnteredPin = findViewById(R.id.userEnteredmpin);
     }
     private void CorrectHaptics() {
@@ -73,5 +81,7 @@ public class ReturnLogIn extends AppCompatActivity {
     private void getKeyValue() {
         SharedPreferences prefs = getSharedPreferences(USER_CODE, MODE_PRIVATE);
         securedKey = prefs.getString("userPin",null);
+        SharedPreferences nameGet = getSharedPreferences(USER_NAME, MODE_PRIVATE);
+        userName = nameGet.getString("userName","Vault-y User");
     }
 }
