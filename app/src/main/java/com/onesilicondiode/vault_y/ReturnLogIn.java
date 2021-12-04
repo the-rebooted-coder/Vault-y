@@ -33,9 +33,7 @@ public class ReturnLogIn extends AppCompatActivity {
         setContentView(R.layout.activity_return_log_in);
         getKeyValue();
         init();
-        actions();
-        Toast.makeText(this,userName,Toast.LENGTH_SHORT).show();
-    }
+        actions();}
 
     private void actions() {
         login.setOnClickListener(view -> {
