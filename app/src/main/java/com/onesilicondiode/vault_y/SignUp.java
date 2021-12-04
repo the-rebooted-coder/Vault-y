@@ -28,7 +28,8 @@ public class SignUp extends AppCompatActivity {
     public static final String USER_NAME = "userName";
     Button submit;
     TextView aboutDES;
-    EditText name;
+    EditText vaultyName;
+    String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,18 +62,19 @@ public class SignUp extends AppCompatActivity {
     }
 
     private void storeKeyAndName() {
+        userName = vaultyName.getText().toString();
+        SharedPreferences.Editor nameEditor = getSharedPreferences(USER_NAME, MODE_PRIVATE).edit();
+        nameEditor.putString("userName",userName);
+        nameEditor.apply();
         mpin = mpinHolder.getText().toString();
         SharedPreferences.Editor editor = getSharedPreferences(USER_CODE, MODE_PRIVATE).edit();
         editor.putString("userPin",mpin);
         editor.apply();
-        SharedPreferences.Editor nameEditor = getSharedPreferences(USER_NAME, MODE_PRIVATE).edit();
-        nameEditor.putString("userName",name.toString());
-        nameEditor.apply();
     }
 
     private void init(){
         mpinHolder = findViewById(R.id.mpin);
-        name = findViewById(R.id.name);
+        vaultyName = findViewById(R.id.vaultyUserName);
         submit = findViewById(R.id.pressButton);
         aboutDES = findViewById(R.id.aboutDES);
     }
@@ -86,12 +88,14 @@ public class SignUp extends AppCompatActivity {
         }
     }
     boolean validate() {
-        if (name.getText().toString().isEmpty()) {
-            name.setError("Name required to continue");
+        String ed1=mpinHolder.getText().toString();
+        int size=ed1.length();
+        if (vaultyName.getText().toString().isEmpty()) {
+            vaultyName.setError("Name required to continue");
             vibrateDeviceError();
             return false;
         }
-        else if (mpinHolder.getText().toString().isEmpty()) {
+        else if (mpinHolder.getText().toString().isEmpty()||(size<4)){
             mpinHolder.setError("4 Digit MPIN is required");
             vibrateDeviceError();
             return false;

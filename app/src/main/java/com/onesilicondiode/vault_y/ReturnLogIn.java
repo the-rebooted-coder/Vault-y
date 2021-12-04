@@ -31,9 +31,10 @@ public class ReturnLogIn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_return_log_in);
+        getKeyValue();
         init();
         actions();
-        getKeyValue();
+        Toast.makeText(this,userName,Toast.LENGTH_SHORT).show();
     }
 
     private void actions() {
@@ -57,6 +58,8 @@ public class ReturnLogIn extends AppCompatActivity {
     private void init(){
         login = findViewById(R.id.enterVaultAgain);
         greeting = findViewById(R.id.appNameHolder);
+        SharedPreferences nameGet = getSharedPreferences(USER_NAME, MODE_PRIVATE);
+        userName = nameGet.getString("userName","Vault-y User");
         greeting.setText(userName+", welcome back to Vault-y!");
         userEnteredPin = findViewById(R.id.userEnteredmpin);
     }
@@ -81,7 +84,5 @@ public class ReturnLogIn extends AppCompatActivity {
     private void getKeyValue() {
         SharedPreferences prefs = getSharedPreferences(USER_CODE, MODE_PRIVATE);
         securedKey = prefs.getString("userPin",null);
-        SharedPreferences nameGet = getSharedPreferences(USER_NAME, MODE_PRIVATE);
-        userName = nameGet.getString("userName","Vault-y User");
     }
 }
