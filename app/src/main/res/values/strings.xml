@@ -25,7 +25,7 @@
     <string name="dev_one_name">Spandan Saxena (191B265)</string>
     <string name="dev_name_two">Trirupa Kushwaha (191B276)</string>
     <string name="dev_name_three">Vinayak Shastri (191B284)</string>
-    <string name="about_security">Names, MPIN, key hashes and fingerprint data are stored in a secured encrypted manner using DES Encryption on the device itself, no data is sent anywhere</string>
+    <string name="about_security">Names, MPIN, key hashes and fingerprint data are stored in a secured encrypted manner using DES Encryption on the device itself, no data is sent anywhere.</string>
     <string name="developed_at"><![CDATA[Developed with ❤️ at\nJaypee University of Engineering & Technology!]]></string>
     <string-array name="welcomeTexts">
         <item>Hello.</item>
