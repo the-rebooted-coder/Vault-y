@@ -58,9 +58,13 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
                 context.startActivity(toMain);
                 ((Activity) context).finish();
                 CorrectHaptics();
-            }, 4000);
+            }, 3500);
              final Handler secondPasser = new Handler(Looper.getMainLooper());
             secondPasser.postDelayed(this::CorrectHaptics, 100);
+            final Handler thirdPasser = new Handler(Looper.getMainLooper());
+            thirdPasser.postDelayed(this::CorrectHaptics, 600);
+            final Handler fourthPasser = new Handler(Looper.getMainLooper());
+            fourthPasser.postDelayed(this::CorrectHaptics, 900);
             fingerprintText.setTextColor(ContextCompat.getColor(context,R.color.blue));
             finger.setAnimation("finger_pass.json");
             finger.setSpeed(2);
