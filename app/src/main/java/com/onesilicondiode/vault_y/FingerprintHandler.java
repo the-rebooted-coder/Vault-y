@@ -46,6 +46,7 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
             final Handler handler = new Handler(Looper.getMainLooper());
             handler.postDelayed(() -> {
                fingerprintText.setText(R.string.use_finger);
+               fingerprintText.setTextColor(ContextCompat.getColor(context,R.color.grey));
                finger.setAnimation("finger_starter.json");
                finger.playAnimation();
             }, 4000);
