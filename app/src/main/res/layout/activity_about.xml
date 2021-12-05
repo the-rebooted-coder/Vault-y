@@ -7,4 +7,146 @@
     android:background="#006dda"
     tools:context=".About">
 
+    <TextView
+        android:id="@+id/appNameExtended"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/productsansbold"
+        android:text="@string/app_name_extended"
+        android:textColor="@color/white"
+        android:textSize="34sp" />
+
+    <TextView
+        android:id="@+id/line"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/appNameExtended"
+        android:layout_width="125dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="40dp"
+        android:background="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/line">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:id="@+id/versionNameHolder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/version"
+            android:textSize="16sp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/productsans"
+            android:textColor="#0841B3"/>
+        <TextView
+            android:id="@+id/versionName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VersionName"
+            android:layout_marginStart="40dp"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/productsansbold"/>
+
+        <TextView
+            android:id="@+id/lastUpdateHolder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/productsans"
+            android:text="@string/last_update"
+            android:textColor="#0841B3"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/lastUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/december_2021"
+            android:layout_marginStart="40dp"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/productsansbold"/>
+
+        <TextView
+            android:id="@+id/developerHolder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/productsans"
+            android:text="@string/made_possible_by"
+            android:textColor="#0841B3"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/devNameOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dev_one_name"
+            android:layout_marginStart="40dp"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/productsansbold"/>
+        <TextView
+            android:id="@+id/devNameTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dev_name_two"
+            android:layout_marginStart="40dp"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/productsansbold"/>
+        <TextView
+            android:id="@+id/devNameThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dev_name_three"
+            android:layout_marginStart="40dp"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/productsansbold"/>
+
+        <TextView
+            android:id="@+id/aboutContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/productsansbold"
+            android:text="@string/about_security"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/developedNest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/productsansbold"
+            android:text="@string/developed_at"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="14sp"/>
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>

@@ -17,6 +17,16 @@
     <string name="logout">Logout</string>
     <string name="theme">Theme</string>
     <string name="use_finger">You may also use your fingerprint\nfor one tap login!</string>
+    <string name="app_name_extended">Vault-y App</string>
+    <string name="version">Version</string>
+    <string name="december_2021">December 2021</string>
+    <string name="last_update">Last Update</string>
+    <string name="made_possible_by">Made Possible By</string>
+    <string name="dev_one_name">Spandan Saxena (191B265)</string>
+    <string name="dev_name_two">Trirupa Kushwaha (191B276)</string>
+    <string name="dev_name_three">Vinayak Shastri (191B284)</string>
+    <string name="about_security">Names, MPIN, key hashes and fingerprint data are stored in a secured encrypted manner using DES Encryption on the device itself, no data is sent anywhere</string>
+    <string name="developed_at"><![CDATA[Developed with ❤️ at\nJaypee University of Engineering & Technology!]]></string>
     <string-array name="welcomeTexts">
         <item>Hello.</item>
         <item>Welcome to Vault-y</item>

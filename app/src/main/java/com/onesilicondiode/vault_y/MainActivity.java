@@ -111,7 +111,9 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.aboutApp:
                 haptics();
-                Toast.makeText(this,"About to be written",Toast.LENGTH_SHORT).show();
+                Intent toAbout = new Intent(this,About.class);
+                startActivity(toAbout);
+                overridePendingTransition(R.anim.fadein,R.anim.fadeout);
                 return true;
             case R.id.theme:
                 int nightModeFlags =
