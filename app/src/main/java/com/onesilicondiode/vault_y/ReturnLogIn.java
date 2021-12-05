@@ -52,8 +52,6 @@ public class ReturnLogIn extends AppCompatActivity {
     private Cipher cipher;
     private String KEY_NAME = "AndroidKey";
     TextView greeting;
-    private FingerprintManager fingerprintManager;
-    private KeyguardManager keyguardManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,8 +80,8 @@ public class ReturnLogIn extends AppCompatActivity {
                 Toast.makeText(this, "Wrong MPIN Entered", Toast.LENGTH_SHORT).show();
             }
         });
-        fingerprintManager = (FingerprintManager) getSystemService(FINGERPRINT_SERVICE);
-        keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
+        FingerprintManager fingerprintManager = (FingerprintManager) getSystemService(FINGERPRINT_SERVICE);
+        KeyguardManager keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
         if (!fingerprintManager.isHardwareDetected()) {
             Toast.makeText(this, "Fingerprint sensor not detected", Toast.LENGTH_SHORT).show();
         } else if (ContextCompat.checkSelfPermission(this, Manifest.permission.USE_FINGERPRINT) != PackageManager.PERMISSION_GRANTED) {

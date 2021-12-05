@@ -40,15 +40,14 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
         if (!b){
             fingerprintText.setTextColor(ContextCompat.getColor(context,R.color.red));
             finger.setAnimation("finger_fail.json");
+            finger.setSpeed(4);
             finger.playAnimation();
             finger.setRepeatCount(0);
             final Handler handler = new Handler(Looper.getMainLooper());
             handler.postDelayed(() -> {
                fingerprintText.setText(R.string.use_finger);
                finger.setAnimation("finger_starter.json");
-               finger.setSpeed(2);
                finger.playAnimation();
-               finger.setSpeed(2);
             }, 4000);
         }
         else {
@@ -58,7 +57,7 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
                 context.startActivity(toMain);
                 ((Activity) context).finish();
                 CorrectHaptics();
-            }, 3500);
+            }, 1200);
              final Handler secondPasser = new Handler(Looper.getMainLooper());
             secondPasser.postDelayed(this::CorrectHaptics, 100);
             final Handler thirdPasser = new Handler(Looper.getMainLooper());
@@ -67,7 +66,7 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
             fourthPasser.postDelayed(this::CorrectHaptics, 900);
             fingerprintText.setTextColor(ContextCompat.getColor(context,R.color.blue));
             finger.setAnimation("finger_pass.json");
-            finger.setSpeed(2);
+            finger.setSpeed(4);
             finger.playAnimation();
             finger.setRepeatCount(0);
         }
@@ -89,7 +88,7 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
     }
     private void CorrectHaptics() {
         Vibrator v3 = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-        long[] pattern = {0,25,50,35,100};
+        long[] pattern = {0,25,50};
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             v3.vibrate(VibrationEffect.createWaveform(pattern,-1));
         } else {
