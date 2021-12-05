@@ -115,7 +115,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(toAbout);
                 overridePendingTransition(R.anim.fadein,R.anim.fadeout);
                 return true;
+           case R.id.addToVault:
+               haptics();
+               Toast.makeText(this,"Adding soon",Toast.LENGTH_SHORT).show();
+               return true;
             case R.id.theme:
+                haptics();
                 int nightModeFlags =
                         this.getResources().getConfiguration().uiMode &
                                 Configuration.UI_MODE_NIGHT_MASK;

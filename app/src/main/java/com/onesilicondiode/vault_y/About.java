@@ -12,10 +12,16 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 public class About extends AppCompatActivity {
     PackageManager manager;
     PackageInfo info;
-    TextView versionName;
+    TextView versionName,lastUpdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,11 @@ public class About extends AppCompatActivity {
     private void getInfo() {
         manager = this.getPackageManager();
         try {
+            Date c = Calendar.getInstance().getTime();
+            SimpleDateFormat df = new SimpleDateFormat("dd-MMMM-yyyy", Locale.getDefault());
+            String formattedDate = df.format(c);
+            lastUpdate = findViewById(R.id.lastUpdate);
+            lastUpdate.setText(formattedDate);
             info = manager.getPackageInfo(this.getPackageName(), PackageManager.GET_ACTIVITIES);
             versionName = findViewById(R.id.versionName);
             versionName.setText(info.versionName);
