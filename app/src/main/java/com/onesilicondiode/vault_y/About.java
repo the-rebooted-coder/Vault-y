@@ -29,7 +29,7 @@ public class About extends AppCompatActivity {
         try {
             info = manager.getPackageInfo(this.getPackageName(), PackageManager.GET_ACTIVITIES);
             versionName = findViewById(R.id.versionName);
-            versionName.setText(info.packageName);
+            versionName.setText(info.versionName);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
