@@ -5,9 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.hardware.fingerprint.FingerprintManager;
 
+import android.os.Build;
 import android.os.CancellationSignal;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -43,7 +46,9 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
             handler.postDelayed(() -> {
                fingerprintText.setText(R.string.use_finger);
                finger.setAnimation("finger_starter.json");
+               finger.setSpeed(2);
                finger.playAnimation();
+               finger.setSpeed(2);
             }, 4000);
         }
         else {
@@ -52,9 +57,13 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
                 Intent toMain = new Intent(context,MainActivity.class);
                 context.startActivity(toMain);
                 ((Activity) context).finish();
+                CorrectHaptics();
             }, 4000);
+             final Handler secondPasser = new Handler(Looper.getMainLooper());
+            secondPasser.postDelayed(this::CorrectHaptics, 2000);
             fingerprintText.setTextColor(ContextCompat.getColor(context,R.color.blue));
             finger.setAnimation("finger_pass.json");
+            finger.setSpeed(2);
             finger.playAnimation();
             finger.setRepeatCount(0);
         }
@@ -73,5 +82,14 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
     @Override
     public void onAuthenticationFailed() {
         this.updateUser("Authentication Failed",false);
+    }
+    private void CorrectHaptics() {
+        Vibrator v3 = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+        long[] pattern = {0,25,50,35,100};
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            v3.vibrate(VibrationEffect.createWaveform(pattern,-1));
+        } else {
+            v3.vibrate(pattern,-1);
+        }
     }
 }
