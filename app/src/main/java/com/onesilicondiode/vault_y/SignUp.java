@@ -45,8 +45,8 @@ public class SignUp extends AppCompatActivity {
             if (validate()) {
                 storeKeyAndName();
                 vibrateDeviceSuccess();
-                Intent toSecuring = new Intent(this,Securing.class);
-                startActivity(toSecuring);
+                Intent toPhone = new Intent(this,PhoneAuth.class);
+                startActivity(toPhone);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 finish();
             }

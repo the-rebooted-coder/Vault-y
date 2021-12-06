@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -33,6 +34,7 @@ public class PhoneAuth extends AppCompatActivity {
     // variable for our text input
     // field for phone and OTP.
     private EditText edtPhone, edtOTP;
+    public static final String PHONE_AUTH = "userPhone";
 
     // buttons for generating OTP and verifying OTP
     private Button verifyOTPBtn, generateOTPBtn;
@@ -94,8 +96,12 @@ public class PhoneAuth extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // if the code is correct and the task is successful
                             // we are sending our user to new activity.
-                            Intent i = new Intent(PhoneAuth.this, MainActivity.class);
+                            Intent i = new Intent(PhoneAuth.this, Securing.class);
+                            SharedPreferences.Editor editor = getSharedPreferences(PHONE_AUTH, MODE_PRIVATE).edit();
+                            editor.putString("userPhone","yes");
+                            editor.apply();
                             startActivity(i);
+                            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                             finish();
                         } else {
                             // if the code is not correct then we are

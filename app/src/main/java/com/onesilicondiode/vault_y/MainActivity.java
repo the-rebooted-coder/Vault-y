@@ -85,10 +85,6 @@ public class MainActivity extends AppCompatActivity {
     {
         switch (item.getItemId())
         {
-            case R.id.moreEncryptions:
-                haptics();
-                Toast.makeText(this,"More to be implemented (:",Toast.LENGTH_SHORT).show();
-                return true;
             case R.id.logout:
                 haptics();
                 isSessionActive = false;
