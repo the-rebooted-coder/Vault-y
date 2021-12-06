@@ -39,12 +39,9 @@ public class ForgetMPIN extends AppCompatActivity {
         getNumber();
         mAuth = FirebaseAuth.getInstance();
         userNumber.setText("Enter OTP sent to\n+91 "+userNumberOTP);
-        resetMPIN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String phone = "+91" + userOTP.getText().toString();
-                sendVerificationCode(phone);
-            }
+        resetMPIN.setOnClickListener(view -> {
+            String phone = "+91" + userNumberOTP;
+            sendVerificationCode(phone);
         });
     }
 
