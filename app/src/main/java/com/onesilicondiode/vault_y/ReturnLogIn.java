@@ -48,6 +48,7 @@ public class ReturnLogIn extends AppCompatActivity {
     String userName;
     EditText userEnteredPin;
     String securedKey;
+    MaterialButton resetMPIN;
     private KeyStore keyStore;
     private Cipher cipher;
     private String KEY_NAME = "AndroidKey";
@@ -79,6 +80,14 @@ public class ReturnLogIn extends AppCompatActivity {
                 WrongHaptics();
                 Toast.makeText(this, "Wrong MPIN Entered", Toast.LENGTH_SHORT).show();
             }
+        });
+        resetMPIN = findViewById(R.id.forgotVaultPin);
+        resetMPIN.setOnClickListener(view -> {
+            CorrectHaptics();
+            Intent toReset = new Intent(ReturnLogIn.this,ForgetMPIN.class);
+            startActivity(toReset);
+            overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
         });
         FingerprintManager fingerprintManager = (FingerprintManager) getSystemService(FINGERPRINT_SERVICE);
         KeyguardManager keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
