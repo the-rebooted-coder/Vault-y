@@ -73,6 +73,7 @@
         <EditText
             android:id="@+id/idEdtOtp"
             android:layout_width="match_parent"
+            android:maxLength="6"
             android:layout_height="wrap_content"
             android:fontFamily="@font/productsans"
             android:hint="@string/enter_received_otp"

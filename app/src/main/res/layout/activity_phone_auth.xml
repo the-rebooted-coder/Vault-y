@@ -75,6 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/productsans"
+            android:maxLength="6"
             android:hint="@string/enter_received_otp"
             android:inputType="numberPassword"
             android:textAlignment="center"
