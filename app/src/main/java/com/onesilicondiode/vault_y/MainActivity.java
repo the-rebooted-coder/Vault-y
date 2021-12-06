@@ -127,9 +127,9 @@ public class MainActivity extends AppCompatActivity {
                                 Configuration.UI_MODE_NIGHT_MASK;
                 new MaterialDialog.Builder(this)
                         .cancelable(false)
-                        .theme(Theme.LIGHT)
                         .title("Choose how you want Vault-y")
-                        .positiveColorRes(R.color.black)
+                        .theme(Theme.DARK)
+                        .positiveColorRes(R.color.gray)
                         .negativeColorRes(R.color.white)
                         .positiveText("Dark")
                         .negativeText("Light")
