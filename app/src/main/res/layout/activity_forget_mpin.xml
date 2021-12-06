@@ -10,13 +10,13 @@
         android:id="@+id/resetOTPHolder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter the OTP"
-        android:fontFamily="@font/productsansbold"
-        android:textSize="24sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
+        android:fontFamily="@font/productsansbold"
+        android:text="Enter the OTP"
+        android:textAlignment="center"
         android:textColor="@color/black"
-        android:textAlignment="center"/>
+        android:textSize="24sp" />
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/otpHolderReset"
         android:layout_centerHorizontal="true"
