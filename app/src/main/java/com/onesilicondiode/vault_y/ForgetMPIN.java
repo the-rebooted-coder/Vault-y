@@ -65,6 +65,7 @@ public class ForgetMPIN extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // if the code is correct and the task is successful
                             // we are sending our user to new activity.
+                            Toast.makeText(ForgetMPIN.this,"MPIN Reset Successfully!",Toast.LENGTH_SHORT).show();
                             Intent i = new Intent(ForgetMPIN.this, SignUp.class);
                             startActivity(i);
                             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
