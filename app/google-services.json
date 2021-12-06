@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "978141567853",
+    "project_id": "vault-y",
+    "storage_bucket": "vault-y.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978141567853:android:93bb3d9ec79c737e879864",
+        "android_client_info": {
+          "package_name": "com.onesilicondiode.vault_y"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "978141567853-dbn9629psanm6pe979tgn292a1075qpi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNji1SBFd5OrK4aGRfu9cBPMo046XLq0M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "978141567853-dbn9629psanm6pe979tgn292a1075qpi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
