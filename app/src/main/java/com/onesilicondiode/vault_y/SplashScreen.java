@@ -12,7 +12,7 @@ import android.os.Bundle;
 public class SplashScreen extends AppCompatActivity {
     public static final String USER_CODE = "userPin";
     public static final String UI_MODE = "uiMode";
-    public static final String USER_NAME = "userName";
+    public static final String PHONE_AUTH = "userPhone";
     String anshu;
     String theme;
     String isUserPhoneAuth;
@@ -20,8 +20,8 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         SharedPreferences setTheme = getSharedPreferences(UI_MODE, MODE_PRIVATE);
         theme= setTheme.getString("uiMode", "System");
-        SharedPreferences getPhone = getSharedPreferences(USER_NAME, MODE_PRIVATE);
-        isUserPhoneAuth = getPhone.getString("userName", "no");
+        SharedPreferences getPhone = getSharedPreferences(PHONE_AUTH, MODE_PRIVATE);
+        isUserPhoneAuth = getPhone.getString("userPhone", "no");
         applyUI();
         super.onCreate(savedInstanceState);
         SharedPreferences prefs = getSharedPreferences(USER_CODE, MODE_PRIVATE);
