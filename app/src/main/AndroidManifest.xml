@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vaulty">
         <activity
+            android:name=".PhoneAuth"
+            android:exported="false" />
+        <activity
             android:name=".About"
             android:exported="false" />
         <activity
