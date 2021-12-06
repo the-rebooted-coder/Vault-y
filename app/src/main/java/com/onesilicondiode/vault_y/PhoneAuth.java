@@ -3,9 +3,13 @@ package com.onesilicondiode.vault_y;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -69,6 +73,7 @@ public class PhoneAuth extends AppCompatActivity {
                 // send OTP method for getting OTP from Firebase.
                 String phone = "+91" + edtPhone.getText().toString();
                 sendVerificationCode(phone);
+                haptics();
                 settingUI();
                 addToPrefs();
                 uselessPhone.playAnimation();
@@ -84,6 +89,7 @@ public class PhoneAuth extends AppCompatActivity {
             } else {
                 // if OTP field is not empty calling
                 // method to verify the OTP.
+                haptics();
                 verifyCode(edtOTP.getText().toString());
             }
         });
@@ -201,5 +207,13 @@ public class PhoneAuth extends AppCompatActivity {
         numberHolder.setVisibility(View.INVISIBLE);
         otpHolder.setVisibility(View.VISIBLE);
     }
-
+    private void haptics() {
+        Vibrator v3 = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+        long[] pattern = {0,25,50,35,100};
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            v3.vibrate(VibrationEffect.createWaveform(pattern,-1));
+        } else {
+            v3.vibrate(pattern,-1);
+        }
+    }
 }

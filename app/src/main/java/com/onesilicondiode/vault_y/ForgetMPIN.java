@@ -3,9 +3,13 @@ package com.onesilicondiode.vault_y;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -46,6 +50,7 @@ public class ForgetMPIN extends AppCompatActivity {
                 userOTP.setError("Enter the OTP");
             }
             else {
+                haptics();
                 verifyCode(userOTP.getText().toString());
             }
         });
@@ -154,5 +159,14 @@ public class ForgetMPIN extends AppCompatActivity {
         // after getting credential we are
         // calling sign in method.
         signInWithCredential(credential);
+    }
+    private void haptics() {
+        Vibrator v3 = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+        long[] pattern = {0,25,50,35,100};
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            v3.vibrate(VibrationEffect.createWaveform(pattern,-1));
+        } else {
+            v3.vibrate(pattern,-1);
+        }
     }
 }
