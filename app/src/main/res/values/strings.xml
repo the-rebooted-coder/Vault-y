@@ -27,6 +27,11 @@
     <string name="dev_name_three">Vinayak Shastri (191B284)</string>
     <string name="about_security">Names, MPIN, key hashes and fingerprint data are stored in a secured encrypted manner using DES Encryption on the device itself, no data is sent anywhere.</string>
     <string name="developed_at"><![CDATA[Developed with ❤️ at\nJaypee University of Engineering & Technology!]]></string>
+    <string name="mobile_verification">Mobile Verification</string>
+    <string name="enter_your_mobile_number">Enter your mobile number</string>
+    <string name="proceed">Proceed</string>
+    <string name="enter_received_otp">Enter received OTP</string>
+    <string name="verify">Verify</string>
     <string-array name="welcomeTexts">
         <item>Hello.</item>
         <item>Welcome to Vault-y</item>
