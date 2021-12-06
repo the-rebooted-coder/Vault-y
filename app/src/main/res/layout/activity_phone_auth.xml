@@ -17,6 +17,7 @@
         android:fontFamily="@font/productsansbold"
         android:textSize="24sp"
         android:textColor="@color/black"
+        android:textAlignment="center"
         android:text="@string/mobile_verification"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"/>
