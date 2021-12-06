@@ -67,22 +67,36 @@
                 android:text="@string/enter_vault"
                 android:textColor="@color/white" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/forgotVaultPin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/enterVaultAgain"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#00FFFFFF"
+                android:fontFamily="@font/productsansitalic"
+                android:text="@string/forgot_pin"
+                android:textColor="#EFEFEF"
+                android:textSize="12sp" />
+
             <TextView
                 android:id="@+id/aboutFingerprint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/enterVaultAgain"
+                android:layout_below="@+id/forgotVaultPin"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/productsans"
                 android:text="@string/use_finger"
                 android:textAlignment="center"
                 android:textSize="16sp" />
+
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/fingerPrintAnim"
                 android:layout_width="60dp"
-                android:layout_below="@+id/aboutFingerprint"
                 android:layout_height="60dp"
+                android:layout_below="@+id/aboutFingerprint"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 app:lottie_autoPlay="true"
