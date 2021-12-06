@@ -15,7 +15,7 @@
         android:fontFamily="@font/productsansbold"
         android:text="Enter the OTP"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="24sp" />
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/otpHolderReset"

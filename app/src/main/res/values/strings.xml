@@ -33,6 +33,8 @@
     <string name="enter_received_otp">Enter received OTP</string>
     <string name="verify">Verify</string>
     <string name="forgot_pin"><u>Forgot pin</u></string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="reset">RESET</string>
     <string-array name="welcomeTexts">
         <item>Hello.</item>
         <item>Welcome to Vault-y</item>
