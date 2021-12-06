@@ -78,7 +78,7 @@
                 android:fontFamily="@font/productsansitalic"
                 android:text="@string/forgot_pin"
                 android:textColor="#EFEFEF"
-                android:textSize="12sp" />
+                android:textSize="11sp" />
 
             <TextView
                 android:id="@+id/aboutFingerprint"

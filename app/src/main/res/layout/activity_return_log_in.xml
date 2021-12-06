@@ -71,15 +71,15 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/forgotVaultPin"
                 android:layout_width="wrap_content"
-                android:backgroundTint="#00FFFFFF"
-                android:textSize="12sp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/enterVaultAgain"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
+                android:backgroundTint="#00FFFFFF"
                 android:fontFamily="@font/productsansitalic"
                 android:text="@string/forgot_pin"
-                android:textColor="#323232" />
+                android:textColor="#323232"
+                android:textSize="11sp" />
 
             <TextView
                 android:id="@+id/aboutFingerprint"
