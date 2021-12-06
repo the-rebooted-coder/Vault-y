@@ -24,13 +24,13 @@ public class SplashScreen extends AppCompatActivity {
         anshu = prefs.getString("userPin",null);
         if (anshu != null){
             //user pin set, proceed to main-activity
-            Intent toReturn = new Intent(this,ReturnLogIn.class);
+            Intent toReturn = new Intent(this,PhoneAuth.class);
             startActivity(toReturn);
             finish();
         }
         else {
             //user pin not set, proceed to setting
-            Intent toSignUp = new Intent(this,SignUp.class);
+            Intent toSignUp = new Intent(this,PhoneAuth.class);
             startActivity(toSignUp);
             finish();
         }

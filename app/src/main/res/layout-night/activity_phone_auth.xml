@@ -14,12 +14,12 @@
         android:id="@+id/otpHolder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/productsansbold"
-        android:textSize="24sp"
-        android:textColor="@color/black"
-        android:text="@string/mobile_verification"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/productsansbold"
+        android:text="@string/mobile_verification"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/phoneHolder"
@@ -98,9 +98,9 @@
         android:id="@+id/uselessPhone"
         android:layout_width="280dp"
         android:layout_height="280dp"
-        android:layout_marginTop="50dp"
         android:layout_below="@+id/idBtnVerify"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
         app:lottie_autoPlay="true"
         app:lottie_fileName="otp.json"
         app:lottie_loop="false" />
