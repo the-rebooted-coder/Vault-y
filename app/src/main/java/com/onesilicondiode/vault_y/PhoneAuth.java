@@ -35,6 +35,7 @@ public class PhoneAuth extends AppCompatActivity {
     // field for phone and OTP.
     private EditText edtPhone, edtOTP;
     public static final String PHONE_AUTH = "userPhone";
+    public static final String USER_PHONE_NUMBER = "userPhoneNumber";
 
     // buttons for generating OTP and verifying OTP
     private Button verifyOTPBtn, generateOTPBtn;
@@ -69,6 +70,7 @@ public class PhoneAuth extends AppCompatActivity {
                 String phone = "+91" + edtPhone.getText().toString();
                 sendVerificationCode(phone);
                 settingUI();
+                addToPrefs();
                 uselessPhone.playAnimation();
                 uselessPhone.setRepeatCount(0);
             }
@@ -86,6 +88,13 @@ public class PhoneAuth extends AppCompatActivity {
             }
         });
     }
+
+    private void addToPrefs() {
+        SharedPreferences.Editor editor = getSharedPreferences(USER_PHONE_NUMBER, MODE_PRIVATE).edit();
+        editor.putString("userPhoneNumber",edtPhone.getText().toString());
+        editor.apply();
+    }
+
     private void signInWithCredential(PhoneAuthCredential credential) {
         // inside this method we are checking if
         // the code entered is correct or not.
