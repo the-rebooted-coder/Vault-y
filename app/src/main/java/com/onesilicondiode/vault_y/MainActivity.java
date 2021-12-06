@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.afollestad.materialdialogs.Theme;
 
 public class MainActivity extends AppCompatActivity {
     boolean isSessionActive = true;
@@ -126,7 +127,10 @@ public class MainActivity extends AppCompatActivity {
                                 Configuration.UI_MODE_NIGHT_MASK;
                 new MaterialDialog.Builder(this)
                         .cancelable(false)
+                        .theme(Theme.LIGHT)
                         .title("Choose how you want Vault-y")
+                        .positiveColorRes(R.color.black)
+                        .negativeColorRes(R.color.white)
                         .positiveText("Dark")
                         .negativeText("Light")
                         .autoDismiss(true)
