@@ -98,26 +98,6 @@
                 android:layout_marginTop="5dp"
                 android:textColor="@color/white"
                 android:fontFamily="@font/productsansbold"/>
-            <TextView
-                android:id="@+id/devNameTwo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/dev_name_two"
-                android:layout_marginStart="40dp"
-                android:textSize="18sp"
-                android:layout_marginTop="5dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/productsansbold"/>
-            <TextView
-                android:id="@+id/devNameThree"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/dev_name_three"
-                android:layout_marginStart="40dp"
-                android:textSize="18sp"
-                android:layout_marginTop="5dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/productsansbold"/>
 
             <TextView
                 android:id="@+id/aboutContent"
@@ -134,11 +114,11 @@
                 android:id="@+id/developedNest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
                 android:gravity="center"
                 android:layout_marginTop="40dp"
-                android:layout_marginBottom="30dp"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:paddingBottom="20dp"
                 android:fontFamily="@font/productsansbold"
                 android:text="@string/developed_at"
                 android:textAlignment="center"
