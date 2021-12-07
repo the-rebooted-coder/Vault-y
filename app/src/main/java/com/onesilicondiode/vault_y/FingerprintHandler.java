@@ -34,8 +34,8 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
     }
 
     private void updateUser(String s, boolean b) {
-        TextView fingerprintText = (TextView) ((Activity)context).findViewById(R.id.aboutFingerprint);
-        LottieAnimationView finger = (LottieAnimationView) ((Activity)context).findViewById(R.id.fingerPrintAnim);
+        TextView fingerprintText = ((Activity)context).findViewById(R.id.aboutFingerprint);
+        LottieAnimationView finger = ((Activity)context).findViewById(R.id.fingerPrintAnim);
         fingerprintText.setText(s);
         if (!b){
             fingerprintText.setTextColor(ContextCompat.getColor(context,R.color.red));

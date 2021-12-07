@@ -1,7 +1,10 @@
 package com.onesilicondiode.vault_y;
 
+import static java.security.AccessController.getContext;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -13,19 +16,35 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.afollestad.materialdialogs.Theme;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     boolean isSessionActive = true;
     public static final String USER_CODE = "userPin";
     public static final String UI_MODE = "uiMode";
+    private ArrayList<HistoryModal> courseModalArrayList;
+    private DBHandler dbHandler;
+    private NotesRVAdapter courseRVAdapter;
+    private RecyclerView coursesRV;
+    TextView defaultText;
+    private String plainText;
+    boolean ciper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +52,43 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
                 WindowManager.LayoutParams.FLAG_SECURE);
         setContentView(R.layout.activity_main);
+        courseModalArrayList = new ArrayList<>();
+        dbHandler = new DBHandler(this);
+        courseModalArrayList = dbHandler.readCourses();
+        defaultText = findViewById(R.id.defaultText);
+        courseRVAdapter = new NotesRVAdapter(courseModalArrayList, this);
+        coursesRV = findViewById(R.id.idRVCourses);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
+        coursesRV.setLayoutManager(linearLayoutManager);
+        coursesRV.setAdapter(courseRVAdapter);
+        if (courseRVAdapter.getItemCount() != 0) {
+            defaultText.setVisibility(View.INVISIBLE);
+        }
+    }
+    void showDialog(){
+        String plain="This information will be ciphered, and is saved on device";
+        AlertDialog.Builder b = new AlertDialog.Builder(this);
+        b.setTitle("Enter Secret Information");
+        b.setMessage(plain);
+        final EditText input = new EditText(this);
+        b.setView(input);
+        b.setPositiveButton("Save", (dialog, whichButton) -> {
+            if(input.getText().toString().isEmpty()){
+                haptics();
+                input.setError("Enter something");
+            }
+            else{
+                plainText = plain;
+                haptics();
+                dbHandler = new DBHandler(getApplicationContext());
+                dbHandler.addNewCourse(input.getText().toString());
+                recreate();
+                ciper = true;
+
+            }
+        });
+        b.setNegativeButton("Cancel", null);
+        b.create().show();
     }
 
     boolean doubleBackToExitPressedOnce = false;
@@ -113,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
            case R.id.addToVault:
                haptics();
-               Toast.makeText(this,"Adding soon",Toast.LENGTH_SHORT).show();
+               showDialog();
                return true;
             case R.id.theme:
                 haptics();
