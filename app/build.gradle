@@ -11,7 +11,7 @@ android {
         minSdk 24
         targetSdk 31
         versionCode 4
-        versionName "OSS-Lab-V1-Release"
+        versionName "OSS-Lab-V2-Release"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
