@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
@@ -77,6 +78,9 @@ public class PhoneAuth extends AppCompatActivity {
                 // send OTP method for getting OTP from Firebase.
                 String phone = "+91" + edtPhone.getText().toString();
                 sendVerificationCode(phone);
+                View parentLayout = findViewById(R.id.phoneAuthLayout);
+                Snackbar.make(parentLayout, "If provided number is present in phone, Vault-y will try to auto fill it", Snackbar.LENGTH_LONG)
+                        .show();
                 timeLeftIndi = findViewById(R.id.timeLeft);
                 timeLeftIndi.setVisibility(View.VISIBLE);
                 startTime();
@@ -113,7 +117,6 @@ public class PhoneAuth extends AppCompatActivity {
                     secondsLeft -= 1;
                     if(secondsLeft == 0)
                     {
-                        Toast.makeText(PhoneAuth.this,"OTP Expired, Retry",Toast.LENGTH_SHORT).show();
                         recreate();
                     }
                 });
