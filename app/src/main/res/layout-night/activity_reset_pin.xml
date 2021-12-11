@@ -55,7 +55,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/pressButton"
+                android:id="@+id/resetButton"
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/mpinNewHolder"

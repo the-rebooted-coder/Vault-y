@@ -155,8 +155,7 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = getSharedPreferences(USER_CODE, MODE_PRIVATE).edit();
                 editor.putString("userPin",null);
                 editor.apply();
-                Toast.makeText(this,"MPIN cleared successfully!",Toast.LENGTH_SHORT).show();
-                Intent toSignUp = new Intent(this,SignUp.class);
+                Intent toSignUp = new Intent(this,ResetPIN.class);
                 startActivity(toSignUp);
                 overridePendingTransition(R.anim.fadein,R.anim.fadeout);
                 finish();

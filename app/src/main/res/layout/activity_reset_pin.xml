@@ -54,14 +54,14 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/pressButton"
+                android:id="@+id/resetButton"
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/mpinNewHolder"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="50dp"
                 android:elevation="40dp"
-                android:text="@string/reset_mpin"/>
+                android:text="@string/reset_mpin" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
     <View
