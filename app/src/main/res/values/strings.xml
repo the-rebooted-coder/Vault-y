@@ -35,6 +35,7 @@
     <string name="forgot_pin"><u>Forgot pin</u></string>
     <string name="enter_otp">Enter OTP</string>
     <string name="reset">RESET</string>
+    <string name="reset_mpin">Reset MPIN</string>
     <string-array name="welcomeTexts">
         <item>Hello.</item>
         <item>Welcome to Vault-y</item>

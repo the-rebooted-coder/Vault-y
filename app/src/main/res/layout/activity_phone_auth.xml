@@ -14,13 +14,13 @@
         android:id="@+id/otpHolder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/productsansbold"
-        android:textSize="24sp"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:text="@string/mobile_verification"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/productsansbold"
+        android:text="@string/mobile_verification"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/phoneHolder"
