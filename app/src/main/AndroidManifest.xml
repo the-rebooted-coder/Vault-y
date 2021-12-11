@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vaulty">
         <activity
+            android:name=".ResetPIN"
+            android:exported="false" />
+        <activity
             android:name=".ForgetMPIN"
             android:exported="false" />
         <activity
