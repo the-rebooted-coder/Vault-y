@@ -51,7 +51,7 @@ public class ReturnLogIn extends AppCompatActivity {
     MaterialButton resetMPIN;
     private KeyStore keyStore;
     private Cipher cipher;
-    private String KEY_NAME = "AndroidKey";
+    private final String KEY_NAME = "AndroidKey";
     TextView greeting;
 
     @Override

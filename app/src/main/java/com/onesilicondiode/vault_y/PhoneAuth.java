@@ -1,8 +1,5 @@
 package com.onesilicondiode.vault_y;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,7 +14,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.airbnb.lottie.LottieAnimationView;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
@@ -36,8 +35,6 @@ import java.util.concurrent.TimeUnit;
 public class PhoneAuth extends AppCompatActivity {
     // variable for FirebaseAuth class
     private FirebaseAuth mAuth;
-
-    LottieAnimationView uselessPhone;
     public int secondsLeft = 60;
     TextView timeLeftIndi;
     // variable for our text input
@@ -65,7 +62,6 @@ public class PhoneAuth extends AppCompatActivity {
         generateOTPBtn = findViewById(R.id.idBtnGetOtp);
         numberHolder = findViewById(R.id.phoneHolder);
         otpHolder = findViewById(R.id.otpHandlerHolder);
-        uselessPhone = findViewById(R.id.uselessPhone);
 
         generateOTPBtn.setOnClickListener(v -> {
             // below line is for checking weather the user
@@ -87,8 +83,6 @@ public class PhoneAuth extends AppCompatActivity {
                 haptics();
                 settingUI();
                 addToPrefs();
-                uselessPhone.playAnimation();
-                uselessPhone.setRepeatCount(0);
             }
         });
         verifyOTPBtn.setOnClickListener(v -> {
@@ -113,7 +107,7 @@ public class PhoneAuth extends AppCompatActivity {
             @Override
             public void run() {
                 runOnUiThread(() -> {
-                    timeLeftIndi.setText(String.valueOf("OTP will expire in "+secondsLeft+" secs"));
+                    timeLeftIndi.setText("OTP will expire in " + secondsLeft + " secs");
                     secondsLeft -= 1;
                     if(secondsLeft == 0)
                     {
@@ -168,7 +162,7 @@ public class PhoneAuth extends AppCompatActivity {
                         .build();
         PhoneAuthProvider.verifyPhoneNumber(options);
     }
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks
+    private final PhoneAuthProvider.OnVerificationStateChangedCallbacks
 
             // initializing our callbacks for on
             // verification callback method.
