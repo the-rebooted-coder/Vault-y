@@ -19,7 +19,7 @@ import androidx.core.content.ContextCompat;
 import com.airbnb.lottie.LottieAnimationView;
 
 public class FingerprintHandler extends FingerprintManager.AuthenticationCallback {
-    private Context context;
+    private final Context context;
     public FingerprintHandler (Context context){
         this.context = context;
     }

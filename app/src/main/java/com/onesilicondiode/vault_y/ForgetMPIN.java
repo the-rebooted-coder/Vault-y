@@ -100,7 +100,7 @@ public class ForgetMPIN extends AppCompatActivity {
                         .build();
         PhoneAuthProvider.verifyPhoneNumber(options);
     }
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks
+    private final PhoneAuthProvider.OnVerificationStateChangedCallbacks
 
             // initializing our callbacks for on
             // verification callback method.

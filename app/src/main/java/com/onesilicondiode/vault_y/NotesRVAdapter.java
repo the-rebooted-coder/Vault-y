@@ -17,8 +17,8 @@ import java.util.ArrayList;
 public class NotesRVAdapter extends RecyclerView.Adapter<NotesRVAdapter.ViewHolder> {
 
     // variable for our array list and context
-    private ArrayList<HistoryModal> courseModalArrayList;
-    private Context context;
+    private final ArrayList<HistoryModal> courseModalArrayList;
+    private final Context context;
 
     // constructor
     public NotesRVAdapter(ArrayList<HistoryModal> courseModalArrayList, Context context) {
@@ -62,7 +62,7 @@ public class NotesRVAdapter extends RecyclerView.Adapter<NotesRVAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         // creating variables for our text views.
-        private TextView courseNameTV;
+        private final TextView courseNameTV;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
