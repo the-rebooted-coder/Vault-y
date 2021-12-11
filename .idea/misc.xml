@@ -15,6 +15,7 @@
         <entry key="app/src/main/res/layout-night/activity_about.xml" value="0.25" />
         <entry key="app/src/main/res/layout-night/activity_forget_mpin.xml" value="0.30512820512820515" />
         <entry key="app/src/main/res/layout-night/activity_phone_auth.xml" value="0.30512820512820515" />
+        <entry key="app/src/main/res/layout-night/activity_reset_pin.xml" value="0.28703703703703703" />
         <entry key="app/src/main/res/layout-night/activity_return_log_in.xml" value="0.30512820512820515" />
         <entry key="app/src/main/res/layout-night/activity_securing.xml" value="0.30512820512820515" />
         <entry key="app/src/main/res/layout-night/sign_up.xml" value="0.21184510250569477" />
