@@ -14,6 +14,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -27,6 +28,8 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 public class PhoneAuth extends AppCompatActivity {
@@ -34,7 +37,8 @@ public class PhoneAuth extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     LottieAnimationView uselessPhone;
-
+    public int secondsLeft = 60;
+    TextView timeLeftIndi;
     // variable for our text input
     // field for phone and OTP.
     private EditText edtPhone, edtOTP;
@@ -73,6 +77,9 @@ public class PhoneAuth extends AppCompatActivity {
                 // send OTP method for getting OTP from Firebase.
                 String phone = "+91" + edtPhone.getText().toString();
                 sendVerificationCode(phone);
+                timeLeftIndi = findViewById(R.id.timeLeft);
+                timeLeftIndi.setVisibility(View.VISIBLE);
+                startTime();
                 haptics();
                 settingUI();
                 addToPrefs();
@@ -93,6 +100,26 @@ public class PhoneAuth extends AppCompatActivity {
                 verifyCode(edtOTP.getText().toString());
             }
         });
+    }
+
+    private void startTime() {
+        Timer t = new Timer();
+        //Set the schedule function and rate
+        t.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(() -> {
+                    timeLeftIndi.setText(String.valueOf("OTP will expire in "+secondsLeft+" secs"));
+                    secondsLeft -= 1;
+                    if(secondsLeft == 0)
+                    {
+                        Toast.makeText(PhoneAuth.this,"OTP Expired, Retry",Toast.LENGTH_SHORT).show();
+                        recreate();
+                    }
+                });
+            }
+
+        }, 0, 1000);
     }
 
     private void addToPrefs() {

@@ -87,24 +87,37 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/idBtnVerify"
         android:layout_width="260dp"
-        android:visibility="invisible"
         android:layout_height="wrap_content"
         android:layout_below="@+id/otpHandlerHolder"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/productsansbold"
         android:text="@string/verify"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/timeLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="timeRemaining"
+        android:fontFamily="@font/productsans"
+        android:layout_below="@+id/idBtnVerify"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:visibility="gone"/>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/uselessPhone"
         android:layout_width="280dp"
         android:layout_height="280dp"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/idBtnVerify"
+        android:layout_below="@+id/timeLeft"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
         app:lottie_autoPlay="true"
         app:lottie_fileName="otp.json"
-        app:lottie_loop="false" />
+        app:lottie_loop="true" />
 
 </RelativeLayout>
