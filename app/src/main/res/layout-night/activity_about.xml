@@ -69,11 +69,13 @@
                 android:textSize="16sp" />
             <TextView
                 android:id="@+id/lastUpdate"
-                android:layout_width="wrap_content"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:text="@string/december_2021"
                 android:layout_marginStart="40dp"
                 android:textSize="18sp"
+                android:minLines="2"
+                android:textAlignment="textStart"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/white"
                 android:fontFamily="@font/productsansbold"/>

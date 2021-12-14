@@ -10,16 +10,20 @@ android {
         applicationId "com.onesilicondiode.vault_y"
         minSdk 24
         targetSdk 31
-        versionCode 4
-        versionName "OSS-Lab-V2-Release"
+        versionCode 5
+        versionName "OSS-Lab-V3-Release"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BUILD_TIME", "\"" + System.currentTimeMillis().toString() + "\"")
+        }
         release {
             minifyEnabled true
             shrinkResources true
+            buildConfigField("String", "BUILD_TIME", "\"" + System.currentTimeMillis().toString() + "\"")
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

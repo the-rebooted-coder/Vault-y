@@ -25,7 +25,7 @@
     <string name="dev_one_name">Spandan Saxena (191B265)</string>
     <string name="dev_name_two">Trirupa Kushwaha (191B276)</string>
     <string name="dev_name_three">Vinayak Shastri (191B284)</string>
-    <string name="about_security">Names, MPIN, key hashes and fingerprint data are stored in a secured encrypted manner using DES Encryption on the device itself, no data is sent anywhere.</string>
+    <string name="about_security">Name, MPIN, Mobile Number, key hashes and fingerprint data are stored in a secured encrypted manner using DES Encryption on the device itself, no data is sent anywhere.</string>
     <string name="developed_at"><![CDATA[Developed with ❤️ at\nJaypee University of Engineering & Technology!]]></string>
     <string name="mobile_verification">Mobile Verification</string>
     <string name="enter_your_mobile_number">Enter your mobile number</string>
@@ -48,8 +48,8 @@
     </string-array>
     <string-array name="encryptionHolders">
         <item>Securely encrypting your MPIN.</item>
-        <item>Generating K1</item>
-        <item>Generating K2</item>
+        <item>Generating Key 1</item>
+        <item>Generating Key 2</item>
         <item>Securing META-INF</item>
         <item>Welcome to Vault-y</item>
     </string-array>

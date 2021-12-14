@@ -22,6 +22,7 @@ public class About extends AppCompatActivity {
     PackageManager manager;
     PackageInfo info;
     TextView versionName,lastUpdate;
+    private Date buildDate = new Date(Long.parseLong(BuildConfig.BUILD_TIME));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +35,10 @@ public class About extends AppCompatActivity {
         manager = this.getPackageManager();
         try {
             Date c = Calendar.getInstance().getTime();
-            SimpleDateFormat df = new SimpleDateFormat("dd-MMMM-yyyy", Locale.getDefault());
-            String formattedDate = df.format(c);
+          //  SimpleDateFormat df = new SimpleDateFormat("dd-MMMM-yyyy", Locale.getDefault());
+        //    String formattedDate = df.format(c);
             lastUpdate = findViewById(R.id.lastUpdate);
-            lastUpdate.setText(formattedDate);
+            lastUpdate.setText(buildDate.toString());
             info = manager.getPackageInfo(this.getPackageName(), PackageManager.GET_ACTIVITIES);
             versionName = findViewById(R.id.versionName);
             versionName.setText(info.versionName);
