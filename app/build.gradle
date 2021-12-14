@@ -10,8 +10,8 @@ android {
         applicationId "com.onesilicondiode.vault_y"
         minSdk 24
         targetSdk 31
-        versionCode 5
-        versionName "OSS-Lab-V3-Release"
+        versionCode 6
+        versionName "OSS-Lab-V4-Release"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
