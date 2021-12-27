@@ -1,4 +1,4 @@
-**Privacy Policy**
+# Privacy Policy
 
 One Silicon Diode built the Vault-y app as an Open Source app. This SERVICE is provided by One Silicon Diode at no cost and is intended for use as is.
 
