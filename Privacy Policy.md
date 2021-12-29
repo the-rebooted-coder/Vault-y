@@ -8,7 +8,7 @@ If you choose to use Vault-y, then you agree to the collection and use of inform
 
 The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which are accessible at Vault-y unless otherwise defined in this Privacy Policy.
 
-**Information Collection and Use**
+# Information Collection and Use
 
 For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information. The information that I request will be retained on your device and is not collected by me in any way.
 
